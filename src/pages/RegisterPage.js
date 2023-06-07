@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {url} from "./url";
+import {url} from "../url";
 export default function RegisterPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

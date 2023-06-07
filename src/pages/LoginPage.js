@@ -1,7 +1,7 @@
 import {useContext, useState} from "react";
 import {Navigate} from "react-router-dom";
 import {UserContext} from "../UserContext";
-import {url} from "./url";
+import {url} from "../url";
 export default function LoginPage() {
   const [username,setUsername] = useState('');
   const [password,setPassword] = useState('');

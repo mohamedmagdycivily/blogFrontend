@@ -1,6 +1,6 @@
 import Post from "../Post";
 import {useEffect, useState} from "react";
-import {url} from "./url";
+import {url} from "../url";
 export default function IndexPage() {
   const [posts,setPosts] = useState([]);
   useEffect(() => {
