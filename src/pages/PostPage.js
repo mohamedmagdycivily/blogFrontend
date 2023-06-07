@@ -3,13 +3,13 @@ import {useParams} from "react-router-dom";
 import {formatISO9075} from "date-fns";
 import {UserContext} from "../UserContext";
 import {Link} from 'react-router-dom';
-
+import {url} from "./url";
 export default function PostPage() {
   const [postInfo,setPostInfo] = useState(null);
   const {userInfo} = useContext(UserContext);
   const {id} = useParams();
   useEffect(() => {
-    fetch(`http://3.252.146.246:4000/post/${id}`)
+    fetch(`${url}/post/${id}`)
       .then(response => {
         response.json().then(postInfo => {
           setPostInfo(postInfo);
@@ -35,7 +35,7 @@ export default function PostPage() {
         </div>
       )}
       <div className="image">
-        <img src={`http://3.252.146.246:4000/${postInfo.cover}`} alt=""/>
+        <img src={`${url}/${postInfo.cover}`} alt=""/>
       </div>
       <div className="content" dangerouslySetInnerHTML={{__html:postInfo.content}} />
     </div>

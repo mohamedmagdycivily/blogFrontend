@@ -3,7 +3,7 @@ import 'react-quill/dist/quill.snow.css';
 import {useState} from "react";
 import {Navigate} from "react-router-dom";
 import Editor from "../Editor";
-
+import {url} from "./url";
 export default function CreatePost() {
   const [title,setTitle] = useState('');
   const [summary,setSummary] = useState('');
@@ -17,7 +17,7 @@ export default function CreatePost() {
     data.set('content', content);
     data.set('file', files[0]);
     ev.preventDefault();
-    const response = await fetch('http://3.252.146.246:4000/post', {
+    const response = await fetch(`${url}/post`, {
       method: 'POST',
       body: data,
       credentials: 'include',
